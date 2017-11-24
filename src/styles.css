@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+	div.panel-title{
+		font-size: 14px !important;
+    color: white;
+    line-height: 20px;
+    left: 1.3px;
+		
+	}
+
+	div.panel-heading{
+		background: #1d9d74 !important;
+	}
+	
+	i.fa-certificate{
+		color: gold;
+	}
+
+	.jumbotron{
+		background: #1d9d74 !important;
+		color: white;
+	}
+
+	.panel{
+		height: 210px;
+		max-height: 210px;
+	}
+
+	.ngui-auto-complete > ul{
+		background:  #1d9d74 !important;
+		color: white !important;
+	}
+
+	.ngx-pagination .current {
+		background: #1d9d74 !important;
+	}
+      
+    input{
+    	border-radius: 0px !important;
+    }
+	select{
+		color: black;
+		height: 33px;
+		padding : 2px;
+	}
+

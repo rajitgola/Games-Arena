@@ -1,0 +1,58 @@
+<section>
+  <div class="bs-example">
+    <div class="jumbotron">
+      <h3 class="text-center">{{title}}!</h3>
+      <p class="text-center">Welcome to Games Arena!</p>
+        <div class="text-center">
+
+           <div class="col-lg-5 col-md-5 col-lg-offset-3 col-md-ffset-3">
+             <input class="form-control" type="text" name="search"  auto-complete [(ngModel)]="rangDeGame" [source]="allGamesTitle" min-chars="2" > 
+           </div>
+           <div class="col-lg-1 col-md-1">
+             <select  name="sort" (change)="sort($event.target.value)">
+                                            <option value="">Sort BY</option>
+                                            <option value="title">Title</option>
+                                            <option value="score">Score</option>
+                                            <option value="genre">Genre</option>
+                                            <option value="platform">Platform</option>
+                                            <option value="editors_choice">Edior's Choice</option>
+                                                
+              </select>
+           </div>
+
+        </div>         
+    </div>
+    </div>
+</section>
+
+
+
+<section>
+
+           <section > <!--All starts-->               
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"  *ngFor="let game of allGames | orderBy: key : reverse | filter : rangDeGame | paginate: { itemsPerPage: 10, currentPage: p } ">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <div class="panel-title">{{game?.title}}</div>
+                          </div>
+                          <div class="panel-body">
+                            <p><strong>Platform:</strong>{{game?.platform}}</p>
+                            <p><strong>Score:</strong><i class="fa fa-star fa-2x"></i>{{game?.score}}</p>
+                            <p><strong>Genre :</strong> {{game?.genre}} </p>
+                            <p><strong>Editor's Choice :</strong> <i class="fa fa-certificate fa-2x" *ngIf="game.editors_choice == 'Y' "></i>{{game?.editors_choice}}</p>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </section> <!--All ends-->
+
+            <section class="text-center">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </section>
+
+</section>
+
+
